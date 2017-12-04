@@ -50,12 +50,13 @@ end
 
 def runner
   welcome
-  final_card_count = initial_round
+  card_count = initial_round
+  # hit?
 
-  while final_card_count < 21
-    display_card_total(final_card_count)
-    final_card_count = final_card_count + hit?(final_card_count)
-    return display_card_total (final_card_count)
+  while card_count < 21
+    # display_card_total(card_count)
+    card_count = hit?(card_count)
+   display_card_total (card_count)
   end
-  end_game(final_card_count)
+  end_game(card_count)
 end
